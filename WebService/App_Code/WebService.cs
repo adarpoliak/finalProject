@@ -130,7 +130,7 @@ public class WebService : System.Web.Services.WebService
         using (SqlConnection con = new SqlConnection(c))
         {
             SqlCommand cmd = 
-            new SqlCommand("SELECT Products.Name, Products.Price, Products.SellingPrice, Brands.Name AS Brand, Colors.Name AS Color, Category.Name AS Category, Products.Description, Products.image FROM Products "
+            new SqlCommand("SELECT Products.ProdId, Products.Name, Products.Price, Products.SellingPrice, Brands.Name AS Brand, Colors.Name AS Color, Category.Name AS Category, Products.Description, Products.image FROM Products "
             +"INNER JOIN Brands ON Products.BrandId = Brands.BrandId INNER JOIN Colors ON Products.ColorId = Colors.ColorId INNER JOIN Category ON Products.CategoryId = Category.CategoryId;",con);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -140,5 +140,20 @@ public class WebService : System.Web.Services.WebService
         }
     }
 
-
+    [WebMethod]
+    public DataTable GetProdById(int Id)
+    {
+        using (SqlConnection con = new SqlConnection(c))
+        {
+            SqlCommand cmd =
+            new SqlCommand("SELECT Products.ProdId, Products.Name, Products.Price, Products.SellingPrice, Brands.Name AS Brand, Colors.Name AS Color, Category.Name AS Category, Products.Description, Products.image FROM Products "
+            + "INNER JOIN Brands ON Products.BrandId = Brands.BrandId INNER JOIN Colors ON Products.ColorId = Colors.ColorId INNER JOIN Category ON Products.CategoryId = Category.CategoryId WHERE ProdID = @1;", con);
+            cmd.Parameters.AddWithValue("@1", Id);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dt.TableName = "Product";
+            return dt;
+        }
+    }
 }

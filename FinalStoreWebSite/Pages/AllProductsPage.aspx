@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <asp:repeater id="rptrProduct" runat="server">
         <ItemTemplate>
-            <asp:HyperLink runat="server">
+            <a href='ProductPage.aspx?PId=<%#Eval("ProdId") %>'>
                 <div class="product">
                 <img src='<%Server.MapPath("FinalStoreWebSite"); %>/<%#Eval("image") %>' />
                 <div>
@@ -13,7 +13,7 @@
                     price:<asp:Label ID="lblPrice" runat="server" Text='<%#Eval("SellingPrice") %>' ></asp:Label>$
                 </div>
             </div>
-            </asp:HyperLink>
+            </a>
         </ItemTemplate>
     </asp:repeater>
 
