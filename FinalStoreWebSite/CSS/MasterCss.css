@@ -1,0 +1,58 @@
+﻿body {
+    background-color:darkgray;
+}
+.nav{
+    list-style-type: none;
+    list-style:none;
+    margin:0.5vh;
+    padding:1vh;
+    text-align:center;
+    background-color: black;
+}
+.nav li{
+    display:inline;
+}
+.nav a{
+    display:inline-block;
+    padding:10px;
+    text-decoration: none;
+    border-top: 3px solid black;
+    color:darkgray;
+}
+.nav a:hover{
+    color: white;
+    border-top: 3px solid white;
+    transition: 0.5s ease;
+}
+.right {
+    float:right;
+}
+
+.product{
+    background-color:white;
+    display:inline-block;
+    margin:0.2vw;
+    overflow:hidden;
+    height:45vh;
+    width:21vw;
+    text-align:center;
+}
+
+.product span{
+    display:inline-block;
+    margin:0.2vw;
+    padding:0;
+    
+}
+
+.product img{
+    height:35vh;
+    width:18vw;
+}
+
+.product:hover{
+
+    z-index:2;
+     box-shadow: 0 15px 25px rgba(0,0,0,.5);
+    transition:ease 0.2s;
+}

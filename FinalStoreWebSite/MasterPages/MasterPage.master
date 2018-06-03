@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPages_MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../CSS/MasterCss.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <!-- navigation bar div -->
+            <ul class="nav">
+                <li><a href="../Pages/HomePage.aspx">Home</a></li>
+                <li><asp:HyperLink ID="hlSignIn" runat="server" NavigateUrl="~/Pages/SignIn.aspx">Sign In</asp:HyperLink></li>
+                <li><asp:HyperLink ID="hlSignUp" runat="server" NavigateUrl="~/Pages/SignUp.aspx">Sign Up</asp:HyperLink></li>
+                <li><asp:HyperLink ID="hlAddProd" runat="server" NavigateUrl="~/Pages/AddProducts.aspx" Visible="false">Add Product</asp:HyperLink></li>
+                <li><asp:HyperLink ID="hlAdmin" runat="server" NavigateUrl="~/Pages/AdminPage.aspx" Visible="false">Admin</asp:HyperLink></li>
+                <li><asp:HyperLink ID="hlUser" Visible="false" runat="server" CssClass="right"></asp:HyperLink></li>
+            </ul>
+        </div>
+        <!-- navigation bar div -->
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
