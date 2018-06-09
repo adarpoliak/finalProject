@@ -20,7 +20,7 @@ public partial class Pages_ForgotPassword : System.Web.UI.Page
     {
         string c = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\אדר\\Desktop\\FinalStoreWebSite\\App_Data\\ClientDB.mdf;Integrated Security=True";
         SqlConnection con = new SqlConnection(c);
-        SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE Email = @1 AND Password = @2;", con);
+        SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE Email = @1;", con);
         cmd.Parameters.AddWithValue("@1", txtEmail.Text);
         con.Open();
         SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -38,7 +38,7 @@ public partial class Pages_ForgotPassword : System.Web.UI.Page
 
             //send mail
             String UserName = dt.Rows[0][1].ToString();
-            String EmailBody = "Hi" + UserName + ",<br/><br/> click on the following link to reset your password <br/> http://localhost:51477/Pages/ChangePass.aspx?Uid=" + myGuID;
+            String EmailBody = "Hi " + UserName + ",<br/><br/> click on the following link to reset your password <br/> http://localhost:51477/Pages/ChangePass.aspx?Uid=" + myGuID;
             MailMessage PassRecMail = new MailMessage("OnlineStore@gmail.com", txtEmail.Text);
             PassRecMail.Body = EmailBody;
             PassRecMail.IsBodyHtml = true;
@@ -47,8 +47,8 @@ public partial class Pages_ForgotPassword : System.Web.UI.Page
             SmtpClient SMTP = new SmtpClient("smtp.gmail.com", 587);
             SMTP.Credentials = new NetworkCredential()
             {
-                UserName = "OnlineStore@gmail.com",
-                Password = "OnlineStore"
+                UserName = "mailstore326@gmail.com",
+                Password = "F9ScP!WR"
             };
             SMTP.EnableSsl = true;
             SMTP.Send(PassRecMail);
@@ -63,3 +63,27 @@ public partial class Pages_ForgotPassword : System.Web.UI.Page
         con.Close();
     }
 }
+//MailMessage mailMsg = new MailMessage();
+//mailMsg.From = new MailAddress("garberraz@gmail.com");
+//mailMsg.To.Add(Session["userEmail"].ToString());
+//                mailMsg.Subject = "Resitte for vegetables buy";
+//                mailMsg.Body = "";
+//                for (int i = 0; i< (Session["cart"] as DataTable).Rows.Count; i++)
+//                {
+//                    for (int j = 0; j< (Session["cart"] as DataTable).Columns.Count; j++)
+
+//                    {
+//                        mailMsg.Body+= (Session["cart"] as DataTable).Columns[j].ColumnName + ":    "+ (Session["cart"] as DataTable).Rows[i][j].ToString();
+//                    }
+//                    mailMsg.Body += "<br/><br/>";
+//                }
+//                mailMsg.Body +="Total price:  "+ totalPriceLab.Text;
+//                mailMsg.IsBodyHtml = true;
+//                SmtpClient smtpClient = new SmtpClient();
+//smtpClient.Host= "smtp.gmail.com";
+//                smtpClient.EnableSsl = true;
+//                smtpClient.Credentials = new System.Net.NetworkCredential("garberraz@gmail.com", "razg5688");
+//                smtpClient.Send(mailMsg);
+
+//                ClientScript.RegisterStartupScript(GetType(), "hwa", "alert('Thank you for buying');", true);
+//                Response.Redirect("http://localhost:62961/Home.aspx");

@@ -11,4 +11,9 @@ public partial class Pages_AdminBrands : System.Web.UI.Page
     {
 
     }
+
+    protected void Unnamed1_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("http://localhost:51477/Pages/AdminPage.aspx");
+    }
 }

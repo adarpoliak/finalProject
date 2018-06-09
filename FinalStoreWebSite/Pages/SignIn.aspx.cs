@@ -27,22 +27,29 @@ public partial class Pages_SignIn : System.Web.UI.Page
         sda.Fill(dt);
         con.Close();
 
-        if(dt.Rows.Count != 0 && !(bool)dt.Rows[0][5])
+        if(dt.Rows.Count != 0)
         {
             //if he is admin
             if ((bool)dt.Rows[0][5])
             {
                 Session["User"] = "Admin";
+                Session["Email"] = txtEmail.Text;
             }
             else
             {
                 Session["User"] = dt.Rows[0][1];
+                Session["Email"] = txtEmail.Text;
                 if ((bool)dt.Rows[0][6])
                 {
                     Session["Seller"] = "Seller";
                 }
+                
             }
-
+            Session["Cart"] = new DataTable();
+            (Session["Cart"] as DataTable).Columns.Add("Name", typeof(string));
+            (Session["Cart"] as DataTable).Columns.Add("Price", typeof(int));
+            (Session["Cart"] as DataTable).Columns.Add("Color", typeof(string));
+            (Session["Cart"] as DataTable).Columns.Add("Brand", typeof(string));
             Response.Redirect("http://localhost:51477/Pages/HomePage.aspx");
         }
 

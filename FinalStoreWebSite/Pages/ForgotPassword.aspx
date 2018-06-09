@@ -6,9 +6,11 @@
     <div>
         <h1>Forgot Password?</h1>
         <hr />
-        <h3>reset your pssword by entering the email address of your user and a password reser link will be sent to you</h3>
-        <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="You musn't leave email address empty!" ControlToValidate="txtEmail" Font-Bold="True"></asp:RequiredFieldValidator>
+        <h2>reset your pssword by entering the email address of your user and a password reser link will be sent to you</h2>
+        <div class="container">
+            <asp:TextBox ID="txtEmail" TextMode="Email" placeholder="Email..." runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="You musn't leave email address empty!" ControlToValidate="txtEmail" Font-Bold="True"></asp:RequiredFieldValidator>
+        </div>
     </div>
     <div>
         <asp:Button ID="Button1" runat="server" Text="Send" OnClick="Button1_Click" UseSubmitBehavior="false" />

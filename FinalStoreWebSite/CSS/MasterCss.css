@@ -1,58 +1,213 @@
 ﻿body {
-    background-color:darkgray;
+    background-color: darkgray;
 }
-.nav{
+.container{
+    display:block;
+    box-sizing:border-box;
+    width:40vw;
+    bottom:10vw;
+}
+
+ul.nav {
     list-style-type: none;
-    list-style:none;
-    margin:0.5vh;
-    padding:1vh;
-    text-align:center;
+    margin: 0.5vh;
+    padding: 1vh;
+    text-align: center;
     background-color: black;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
 }
-.nav li{
-    display:inline;
+
+.nav li {
+    display: inline;
 }
-.nav a{
-    display:inline-block;
-    padding:10px;
+
+.nav a {
+    display: inline-block;
+    padding: 10px;
     text-decoration: none;
     border-top: 3px solid black;
-    color:darkgray;
+    color: darkgray;
 }
-.nav a:hover{
-    color: white;
-    border-top: 3px solid white;
+
+    .nav a:hover {
+        color: white;
+        border-top: 3px solid white;
+        transition: 0.5s ease;
+    }
+
+.right {
+    float: right;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+}
+
+.product {
+    background-color: white;
+    display: inline-block;
+    margin: 1vw;
+    overflow: hidden;
+    height: 45vh;
+    width: 21vw;
+    text-align: center;
+}
+
+    .product span {
+        display: inline-block;
+        margin: 0.2vw;
+        padding: 0;
+    }
+
+    .product img {
+        height: 35vh;
+        width: 18vw;
+    }
+
+    .product:hover {
+        z-index: 2;
+        box-shadow: 0 15px 25px rgba(0,0,0,.5);
+        transition: ease 0.2s;
+    }
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+}
+
+    .dropdown-content input[type = submit] {
+        color: lightgray;
+        background-color: transparent;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        border: none;
+        width: 100%;
+        text-align: left;
+    }
+
+    .dropdown-content .content {
+        color: lightgray;
+        background-color: transparent;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        border: none;
+        text-align: left;
+    }
+
+        .dropdown-content .content:hover {
+            border: none;
+            color: white;
+        }
+
+    .dropdown-content input[type = submit]:hover {
+        color: white;
+    }
+
+.dropdown:hover .dropdown-content {
+    display: block;
     transition: 0.5s ease;
 }
-.right {
-    float:right;
+
+.dropdown:hover .dropbtn {
+    background-color: black;
+    transition: 0.5s ease;
 }
 
-.product{
-    background-color:white;
-    display:inline-block;
-    margin:0.2vw;
-    overflow:hidden;
-    height:45vh;
-    width:21vw;
-    text-align:center;
+h1 {
+    color: #111;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 3.5em;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 1;
+    text-align: center;
 }
 
-.product span{
-    display:inline-block;
-    margin:0.2vw;
-    padding:0;
-    
+p {
+    color: black;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    margin: 0 0 24px;
+    text-align: justify;
+    text-justify: inter-word;
+    display:block;
 }
 
-.product img{
-    height:35vh;
-    width:18vw;
+h2 {
+    color: #111;
+    font-family: 'Open Sans', sans-serif;
+    font-size: larger;
+    font-weight: 300;
+    line-height: 32px;
+    text-align: justify;
 }
 
-.product:hover{
+hr {
+    border-color: darkgray;
+}
 
-    z-index:2;
-     box-shadow: 0 15px 25px rgba(0,0,0,.5);
-    transition:ease 0.2s;
+input[type=text], select, textarea, input[type=password], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type = checkbox]{
+    border-radius:10px;
+}
+input[type=button], input[type=submit]{
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.admin-nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 35vw;
+    background-color: lightgrey;
+}
+
+.admin-content a {
+    display: block;
+    color: #000;
+    padding: 2.5vh 1.5vw;
+    text-decoration: none;
+}
+
+/* Change the link color on hover */
+.admin-content a:hover {
+    background-color: #555;
+    color: white;
+}
+
+table{
+    width:100%;
+    border-color:black;
+    border-radius:12px;
+}
+th, td{
+    padding: 15px;
+    text-align: left;
 }

@@ -3,6 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <h1>products:</h1>
+    <hr />
+    <asp:button runat="server" text="Back" OnClick="Unnamed1_Click" /><br />
     <div>
         <asp:gridview runat="server" AutoGenerateColumns="False" DataKeyNames="ProdId" DataSourceID="products" AllowPaging="True" AllowSorting="True">
             <Columns>

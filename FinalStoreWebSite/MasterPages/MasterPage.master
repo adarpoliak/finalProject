@@ -11,23 +11,46 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <a name="top"></a>
+        <div class="sticky">
             <!-- navigation bar div -->
             <ul class="nav">
                 <li><a href="../Pages/HomePage.aspx">Home</a></li>
-                <li><asp:HyperLink ID="hlSignIn" runat="server" NavigateUrl="~/Pages/SignIn.aspx">Sign In</asp:HyperLink></li>
-                <li><asp:HyperLink ID="hlSignUp" runat="server" NavigateUrl="~/Pages/SignUp.aspx">Sign Up</asp:HyperLink></li>
-                <li><asp:HyperLink ID="hlAddProd" runat="server" NavigateUrl="~/Pages/AddProducts.aspx" Visible="false">Add Product</asp:HyperLink></li>
-                <li><asp:HyperLink ID="hlAdmin" runat="server" NavigateUrl="~/Pages/AdminPage.aspx" Visible="false">Admin</asp:HyperLink></li>
-                <li><asp:HyperLink ID="hlUser" Visible="false" runat="server" CssClass="right"></asp:HyperLink></li>
+                <li>
+                    <asp:HyperLink ID="hlSignIn" runat="server" NavigateUrl="~/Pages/SignIn.aspx">Sign In</asp:HyperLink></li>
+                <li>
+                    <asp:HyperLink ID="hlProducts" runat="server" NavigateUrl="~/Pages/AllProductsPage.aspx">See our products</asp:HyperLink></li>
+                <li>
+                    <asp:HyperLink ID="hlSignUp" runat="server" NavigateUrl="~/Pages/SignUp.aspx">Sign Up</asp:HyperLink></li>
+                <li>
+                    <asp:HyperLink ID="hlAddProd" runat="server" NavigateUrl="~/Pages/AddProducts.aspx" Visible="false">Add Product</asp:HyperLink></li>
+                <li>
+                    <asp:HyperLink ID="hlAdmin" runat="server" NavigateUrl="~/Pages/AdminPage.aspx" Visible="false">Admin</asp:HyperLink></li>
+                <li class="dropdown right">
+                    <asp:HyperLink ID="hlUser" Visible="false" NavigateUrl="#" runat="server" CssClass="dropbtn"></asp:HyperLink>
+                    <div class="dropdown-content ">
+                        <asp:HyperLink ID="HyperLink1" NavigateUrl="~/Pages/Cart.aspx" runat="server" CssClass="dropbtn content">Cart</asp:HyperLink>
+                        <asp:Button ID="btnLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" />
+
+                    </div>
+                </li>
             </ul>
         </div>
         <!-- navigation bar div -->
-
+        
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
+        <!-- Footer -->
+        <hr />
+        <footer>
+            <div style="display:block;">
+                <p style="display:inline-block; float:right;"><a href="#top">Back to top</a></p>
+                <p style="display:inline-block;">&copy; 2018 Adar Poliak &middot; <a href="../Pages/HomePage.aspx">Home</a> &middot; <a href="#">About</a> &middot; <a href="#">Contact</a> &middot; <a href="#">Products</a></p>
+            </div>
+        </footer>
+        <!-- Footer -->
     </form>
 </body>
 </html>

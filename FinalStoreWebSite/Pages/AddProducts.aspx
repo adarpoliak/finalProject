@@ -40,9 +40,9 @@
         <br />
         <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" />
         <br />
-        <a href="AddBrand.aspx">cant find a brand? click here!</a>
-        <a href="AddCategory.aspx">cant find a category? click here!</a>
-        <a href="AddColor.aspx">cant find a color? click here!</a>
+        <a href="AddBrand.aspx">cant find a brand?</a><br />
+        <a href="AddCategory.aspx">cant find a category?</a><br />
+        <a href="AddColor.aspx">cant find a color?</a><br />
     </div>
 </asp:Content>
 

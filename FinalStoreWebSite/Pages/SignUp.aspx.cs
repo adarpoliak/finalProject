@@ -11,13 +11,14 @@ public partial class Pages_SignUp : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        ddlSeller.Items.Add(new ListItem("not a seller"));
+        ddlSeller.Items.Add(new ListItem("I`m a seller"));
     }
 
     protected void btnSend_Click(object sender, EventArgs e)
     {
         int seller = 0;
-        if (CheckBox1.Checked)
+        if (ddlSeller.SelectedItem.Text == "I`m a seller")
         {
             seller = 1;
         }
@@ -41,7 +42,7 @@ public partial class Pages_SignUp : System.Web.UI.Page
         }
         catch
         {
-            lblTitle.Text = "Register: (Something went wrong, try again later)";
+            lblTitle.Text = "(Something went wrong, try again later)";
         }
     }
 }

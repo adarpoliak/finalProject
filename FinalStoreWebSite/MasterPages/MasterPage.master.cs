@@ -11,7 +11,7 @@ public partial class MasterPages_MasterPage : System.Web.UI.MasterPage
     {
         if (Session["User"] != null)
         {
-            hlUser.Text = Session["User"].ToString();
+            hlUser.Text = "Welcome Back, " + Session["User"].ToString();
             hlUser.Visible = true;
             hlSignUp.Visible = false;
             hlSignIn.Visible = false;
@@ -35,5 +35,11 @@ public partial class MasterPages_MasterPage : System.Web.UI.MasterPage
 
 
         }
+    }
+
+    protected void btnLogOut_Click(object sender, EventArgs e)
+    {
+        Session.Clear();
+        Response.Redirect("http://localhost:51477/Pages/HomePage.aspx");
     }
 }

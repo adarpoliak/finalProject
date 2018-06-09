@@ -12,6 +12,10 @@ public partial class Pages_AllProductsPage : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         BindRepeaterData();
+        if(Request.QueryString["PB"] == "t")
+        {
+            Response.Write("Product Added To Cart !");
+        }
     }
 
     private void BindRepeaterData()
